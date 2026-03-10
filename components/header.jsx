@@ -5,13 +5,9 @@ import githubLogo from 'public/images/github-mark-white.svg';
 
 const navItems = [
     { linkText: 'Home', href: '/' },
-    { linkText: 'Revalidation', href: '/revalidation' },
-    { linkText: 'Image CDN', href: '/image-cdn' },
-    { linkText: 'Edge Function', href: '/edge' },
-    { linkText: 'Blobs', href: '/blobs' },
-    { linkText: 'Classics', href: '/classics' },
-    { linkText: 'Middleware', href: '/middleware' },
-    { linkText: 'Routing', href: '/routing' }
+    { linkText: 'Free Content', href: '/' },
+    { linkText: 'Blog', href: '/' },
+    { linkText: 'Start Free trial', href: '/' }
 ];
 
 export function Header() {
@@ -31,14 +27,6 @@ export function Header() {
                     ))}
                 </ul>
             )}
-            <Link
-                href="https://github.com/netlify-templates/next-platform-starter"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="ml-auto"
-            >
-                <Image src={githubLogo} alt="GitHub logo" className="w-7" />
-            </Link>
         </nav>
     );
 }
