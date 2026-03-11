@@ -23,7 +23,7 @@ export function Header() {
 
     return (
         <header className="sticky top-2 z-50 pb-6 pt-2 sm:top-6 sm:pb-12 sm:pt-6">
-            <div className="relative rounded-3xl border border-white/65 bg-white/55 px-3 py-2.5 shadow-[0_10px_40px_rgba(15,23,42,0.12)] backdrop-blur-xl supports-[backdrop-filter]:bg-white/45 sm:rounded-4xl sm:px-4 sm:py-3">
+            <div className="relative rounded-3xl border border-white/65 bg-white/55 px-3 py-2.5 shadow-[0_10px_40px_rgba(15,23,42,0.12)] backdrop-blur-xl supports-backdrop-filter:bg-white/45 sm:rounded-4xl sm:px-4 sm:py-3">
                 <div className="relative flex min-w-0 items-center gap-2">
                     <Link href="/" className="shrink-0 no-underline" aria-label="BULK home" onClick={closeMobileMenu}>
                         <span className="flex items-center gap-1.5">
@@ -40,7 +40,10 @@ export function Header() {
                         </span>
                     </Link>
 
-                    <nav className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-2 lg:flex" aria-label="Main navigation">
+                    <nav
+                        className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-2 lg:flex"
+                        aria-label="Main navigation"
+                    >
                         {navItems.map((item, index) => (
                             <Link
                                 key={index}
@@ -90,7 +93,10 @@ export function Header() {
                 </div>
 
                 {mobileMenuOpen && (
-                    <div id="mobile-header-menu" className="absolute left-0 right-0 top-[calc(100%+0.4rem)] z-50 lg:hidden">
+                    <div
+                        id="mobile-header-menu"
+                        className="absolute left-0 right-0 top-[calc(100%+0.4rem)] z-50 lg:hidden"
+                    >
                         <div className="rounded-3xl border border-white/65 bg-white/92 p-2 shadow-[0_14px_35px_rgba(15,23,42,0.18)] backdrop-blur-xl">
                             <nav className="flex flex-col gap-1" aria-label="Mobile navigation">
                                 {navItems.map((item, index) => (
