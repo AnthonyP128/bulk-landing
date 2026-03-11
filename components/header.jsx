@@ -22,8 +22,8 @@ export function Header() {
     }
 
     return (
-        <header className="sticky top-2 z-50 pb-6 pt-2 sm:top-6 sm:pb-12 sm:pt-6">
-            <div className="relative rounded-3xl border border-white/65 bg-white/55 px-3 py-2.5 shadow-[0_10px_40px_rgba(15,23,42,0.12)] backdrop-blur-xl supports-backdrop-filter:bg-white/45 sm:rounded-4xl sm:px-4 sm:py-3">
+        <header className="pointer-events-none sticky top-2 z-50 pb-6 pt-2 sm:top-6 sm:pb-12 sm:pt-6">
+            <div className="pointer-events-auto relative rounded-3xl border border-white/65 bg-white/55 px-3 py-2.5 shadow-[0_10px_40px_rgba(15,23,42,0.12)] backdrop-blur-xl supports-backdrop-filter:bg-white/45 sm:rounded-4xl sm:px-4 sm:py-3">
                 <div className="relative flex min-w-0 items-center gap-2">
                     <Link href="/" className="shrink-0 no-underline" aria-label="BULK home" onClick={closeMobileMenu}>
                         <span className="flex items-center gap-1.5">

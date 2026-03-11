@@ -29,7 +29,6 @@ export default function FreeContentPage() {
                         <Link href={`/free-content/${item.slug}`} className="group block no-underline">
                             <article className="h-full rounded-2xl border border-black/10 bg-white p-3 transition-colors hover:border-emerald-500/45">
                                 <div className="relative overflow-hidden rounded-xl border border-black/10 bg-neutral-50">
-                                    <div className="pointer-events-none absolute inset-x-0 top-0 h-2 bg-gradient-to-r from-cyan-400 via-fuchsia-400 to-blue-500 opacity-70" />
                                     <div className="relative aspect-[4/3]">
                                         <Image
                                             src={getFreeContentImage(item)}

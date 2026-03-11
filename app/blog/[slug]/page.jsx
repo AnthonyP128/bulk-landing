@@ -12,8 +12,9 @@ export function generateStaticParams() {
     return getAllBlogPosts().map((post) => ({ slug: post.slug }));
 }
 
-export function generateMetadata({ params }) {
-    const post = getBlogPostBySlug(params.slug);
+export async function generateMetadata({ params }) {
+    const resolvedParams = await params;
+    const post = getBlogPostBySlug(resolvedParams.slug);
 
     if (!post) {
         return {
@@ -27,8 +28,9 @@ export function generateMetadata({ params }) {
     };
 }
 
-export default function BlogPostPage({ params }) {
-    const post = getBlogPostBySlug(params.slug);
+export default async function BlogPostPage({ params }) {
+    const resolvedParams = await params;
+    const post = getBlogPostBySlug(resolvedParams.slug);
 
     if (!post) {
         notFound();
@@ -39,14 +41,30 @@ export default function BlogPostPage({ params }) {
 
     return (
         <article className="mx-auto w-full max-w-3xl pb-16">
-            <Link href="/blog" className="text-sm font-medium text-neutral-600 no-underline transition hover:text-emerald-600">
-                ← Back to Blog
-            </Link>
+            <div className="mb-3 flex justify-start">
+                <Link
+                    href="/blog"
+                    aria-label="Back to Blog"
+                    className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-black/15 bg-white text-neutral-800 no-underline shadow-sm transition hover:border-emerald-500/60 hover:text-emerald-700"
+                >
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="h-4 w-4"
+                        aria-hidden="true"
+                    >
+                        <path d="m15 18-6-6 6-6" />
+                    </svg>
+                </Link>
+            </div>
 
             <header className="mt-5 border-b border-black/10 pb-6">
-                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-neutral-500">
-                    {post.category} · {formatBlogDate(post.publishedAt)} · {post.readTime}
-                </p>
+                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-neutral-500">{formatBlogDate(post.publishedAt)}</p>
                 <h1 className="mt-3 text-3xl leading-tight text-neutral-900 sm:text-5xl">{post.title}</h1>
                 <p className="mt-4 text-base leading-7 text-neutral-700 sm:text-lg">{post.excerpt}</p>
             </header>
