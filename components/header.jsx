@@ -7,7 +7,7 @@ import logo from 'public/images/logo-white.png';
 
 const navItems = [
     { linkText: 'Free Content', href: '/free-content' },
-    { linkText: 'Blogs', href: '/blog' }
+    { linkText: 'Blog', href: '/blog' }
 ];
 
 export function Header() {

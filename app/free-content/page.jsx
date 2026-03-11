@@ -11,7 +11,7 @@ export default function FreeContentPage() {
 
     return (
         <section className="mx-auto w-full max-w-5xl pb-16">
-            <div className="text-center">
+            <div className="text-center pt-8">
                 <h1 className="text-4xl text-neutral-900 sm:text-5xl">Free Content</h1>
                 <p className="mx-auto mt-3 max-w-2xl text-sm leading-7 text-neutral-600 sm:text-base">
                     Free templates and resources for coaches. No email signups, just practical tools.
