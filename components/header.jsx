@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import logo from 'public/images/logo-white.png';
+import { StartFreeTrialLink } from './start-free-trial-link';
 
 const navItems = [
     { linkText: 'Free Content', href: '/free-content' },
@@ -84,12 +85,11 @@ export function Header() {
                         <span className="sr-only">Toggle menu</span>
                     </button>
 
-                    <Link
-                        href="/"
+                    <StartFreeTrialLink
                         className="ml-auto hidden items-center justify-center rounded-full bg-neutral-950 px-5 py-2.5 text-sm font-semibold whitespace-nowrap text-white no-underline transition hover:bg-neutral-800 lg:inline-flex"
                     >
                         Start Free Trial
-                    </Link>
+                    </StartFreeTrialLink>
                 </div>
 
                 {mobileMenuOpen && (
@@ -109,13 +109,12 @@ export function Header() {
                                         {item.linkText}
                                     </Link>
                                 ))}
-                                <Link
-                                    href="/"
+                                <StartFreeTrialLink
                                     onClick={closeMobileMenu}
                                     className="mt-1 inline-flex items-center justify-center rounded-xl bg-neutral-950 px-4 py-2.5 text-sm font-semibold text-white no-underline transition hover:bg-neutral-800"
                                 >
                                     Start Free Trial
-                                </Link>
+                                </StartFreeTrialLink>
                             </nav>
                         </div>
                     </div>
